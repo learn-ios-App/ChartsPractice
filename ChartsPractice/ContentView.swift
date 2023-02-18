@@ -6,16 +6,25 @@
 //
 
 import SwiftUI
+import Charts
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        Chart {
+            BarMark(
+                x: .value("Name", "りんご"),
+                y: .value("Count", 130)
+            )
+            BarMark(
+                x: .value("Name", "バナナ"),
+                y: .value("Count", 90)
+            )
+            BarMark(
+                x: .value("Name", "ぶどう"),
+                y: .value("Count", 50)
+            )
         }
-        .padding()
+        .padding([.all], 20)
     }
 }
 
